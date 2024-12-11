@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     key: loginViewModel.formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const AppTexts(
                           textColor: AppColor.kText1,
@@ -52,10 +52,22 @@ class LoginScreen extends StatelessWidget {
                         ).bodyBXL(),
                         const AppTexts(
                           textColor: AppColor.kText1,
-                          data: "Welcome back.\nYou’ve been missed!",
-                          textAlign: TextAlign.center,
+                          data: "Welcome back.",
+                          textAlign: TextAlign.start,
                         ).bodyML(),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: 8),
+                        const AppTexts(
+                          textColor: AppColor.kText1,
+                          data: "You’ve been missed!",
+                          textAlign: TextAlign.start,
+                        ).bodyML(),                        const SizedBox(height: 24),
+                        const AppTexts(
+                          textColor: AppColor.kText1,
+                          data: "Email",
+                          textAlign: TextAlign.start,
+                          textDirection: TextDirection.ltr
+                          // textAlign: TextAlign.left,
+                        ).bodySBM(),
                         CustomTextFormField(
                           hintText: 'Your email',
                           controller: loginViewModel.emailController,
@@ -72,6 +84,13 @@ class LoginScreen extends StatelessWidget {
                           },
                         ),
                         const SizedBox(height: 16),
+                        const AppTexts(
+                            textColor: AppColor.kText1,
+                            data: "Password",
+                            textAlign: TextAlign.start,
+                            textDirection: TextDirection.ltr
+                          // textAlign: TextAlign.left,
+                        ).bodySBM(),
                         CustomTextFormField(
                           hintText: 'Password',
                           controller: loginViewModel.passwordController,
@@ -94,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 222),
+                        const SizedBox(height: 200),
                         if (loginViewModel.isLoading)
                           const CircularProgressIndicator()
                         else
